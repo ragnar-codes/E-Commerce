@@ -1,0 +1,27 @@
+<div class="container">
+    <h3 class="text-center">Liste Des Categories</h3>
+    <div>
+      <button class="btn btn-success" [routerLink]="'/ajout-categorie'">Ajouter</button>
+    </div>
+    <table class="table tablz-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nom Categorie</th>
+            <th scope="col">Image Categorie</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of listCategories">
+            <td> {{c.nomcategorie}} </td>
+            <td> <img src="../../../assets/images/{{c.imagecategorie}}" alt=""> </td>
+            <td>
+                <a href="" class="btn btn-primary m-1">Modifier</a>
+                <a href="" class="btn btn-danger m-1">Supprimer</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<router-outlet></router-outlet>
