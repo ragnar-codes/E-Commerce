@@ -1,1 +1,23 @@
-<p>edit-categorie works!</p>
+<div class="container">
+    <h1>Ajout d'une Categorie</h1>
+    <form (ngSubmit)="UpdateCategorie">
+        <div class="mb-3 form-group">
+            <input type="text" readonly class="form-control" name="id" id="id1" [(ngModel)]="cat._id">
+            <label for="exampleFormControlInput1" class="form-label">Nom Categorie</label>
+            <input type="text" class="form-control" name="nomcategorie" id="exampleFormControlInput1" [(ngModel)]="cat.nomcategorie">
+          </div>
+          <div class="mb-3 form-group">
+            <input class="form-control" style="display: none;" type="file" id="FormFile" (change)="onFileChanged($event)" #fileInput>
+            <button type="button" class="btn btn-primary" (click)="fileInput.click()">Select File</button>
+            <input type="text" readonly class="form-control" id="imagecategorie" 
+            name="imagecategorie" [(ngModel)]="cat.imagecategorie" >
+            <div *ngIf="cat.imagecategorie!=null"> <img src="../assets/images/{{cat.imagecategorie}}" width="50" height="50"/></div>
+                
+          </div>
+          <div class="col-auto form-group">
+            <button type="submit" class="btn btn-success mb-3" >Ajouter</button>
+            <a routerLink="/list-categories" class="btn btn-danger mb-3 ms-2">annuler</a>
+          </div>
+    </form>
+    
+</div>

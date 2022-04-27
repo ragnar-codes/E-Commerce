@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'edit-articles', component: EditArticlesComponent},
   {path: 'ajout-articles', component: AjoutArticleComponent},
   {path: 'list-categories', component: ListCategoriesComponent},
-  {path: 'edit-categories', component: EditCategorieComponent},
+  {path: 'edit-categories/:_id', component: EditCategorieComponent},
   {path: 'ajout-categorie', component: AjoutCategorieComponent},
   {path: 'list-scategories', component: ListScategoriesComponent},
   {path: 'edit-scategories', component: EditScategoriesComponent},

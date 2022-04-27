@@ -13,10 +13,15 @@ export class ListCategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.getCategories();
   }
+  
   getCategories = () => {
     this.catService.fetchCategories().subscribe((data:Categorie[]) => {
       this.listCategories = data;
     })
+  }
+
+  DeleteCategorie(id: object){
+    return this.catService.deleteCategorie(id).subscribe(data => {this.getCategories})
   }
 
 }
