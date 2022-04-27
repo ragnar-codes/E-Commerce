@@ -20,7 +20,7 @@ export class EditCategorieComponent implements OnInit {
   }
 
   UpdateCategorie(){
-    this.catService.updateCategorie(this.id,this.cat).subscribe(data=>this.router.navigate(['/categories/listcategories']));
+    this.catService.updateCategorie(this.id,this.cat).subscribe(data=>this.router.navigate(['list-categories']));
   }
   onFileChanged(event:any) {
     console.log( event.target.files[0].name) ;
