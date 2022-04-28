@@ -2,12 +2,11 @@
 <div class="container">
     <h3 class="text-center">Liste Des Sous Categories</h3>
     <div>
-      <button class="btn btn-success" [routerLink]="'/ajout-categorie'">Ajouter</button>
+      <button class="btn btn-success" [routerLink]="'/ajout-scategorie'">Ajouter</button>
     </div>
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">ID Categorie</th>
             <th scope="col">Nom Scategorie</th>
             <th scope="col">Image Scategorie</th>
             <th scope="col">Action</th>
@@ -15,7 +14,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let c of listScategories">
-            <td>{{c.categorieID._id}}</td>
+            
             <td> {{c.nomscategorie}} </td>
             <td> <img src="../../../assets/{{c.imagescat}}" alt=""> </td>
             <td>

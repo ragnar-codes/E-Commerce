@@ -14,7 +14,7 @@ export class ScategorieService {
   fetchScategories = ():Observable<Scategorie[]>=>{
     return this.http.get<Scategorie[]>(this.url);
   }
-  addCategorie = (scat:Scategorie):Observable<Scategorie> => {
+  addScategorie = (scat:Scategorie):Observable<Scategorie> => {
       return this.http.post<Scategorie>(this.url,scat);
   }
 }
