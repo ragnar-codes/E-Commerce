@@ -17,4 +17,13 @@ export class ScategorieService {
   addScategorie = (scat:Scategorie):Observable<Scategorie> => {
       return this.http.post<Scategorie>(this.url,scat);
   }
+  getScategorieById(id: object):Observable<Scategorie>{
+    return this.http.get<Scategorie>(this.url + '/' + id);
+  }
+  updateScategorie(id: object, cat:Scategorie):Observable<Scategorie>{
+    return this.http.put<Scategorie>(this.url + '/' + id, cat);
+  }
+  deleteScategorie(id: object):Observable<Scategorie>{
+    return this.http.delete<Scategorie>(this.url + '/' + id);
+  }
 }

@@ -19,6 +19,9 @@ export class ListScategoriesComponent implements OnInit {
       this.listScategories = data;
     })
   }
+  DeleteScategorie(id: object){
+    return this.scatService.deleteScategorie(id).subscribe(data => {this.getScategories})
+  }
 
 
 }

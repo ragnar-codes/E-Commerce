@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'edit-categories/:_id', component: EditCategorieComponent},
   {path: 'ajout-categorie', component: AjoutCategorieComponent},
   {path: 'list-scategories', component: ListScategoriesComponent},
-  {path: 'edit-scategories', component: EditScategoriesComponent},
+  {path: 'edit-scategories/:id', component: EditScategoriesComponent},
   {path: 'ajout-scategorie', component: AjoutScategoriesComponent},
   
 

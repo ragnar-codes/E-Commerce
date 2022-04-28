@@ -18,8 +18,8 @@
             <td> {{c.nomscategorie}} </td>
             <td> <img src="../../../assets/{{c.imagescat}}" alt=""> </td>
             <td>
-                <a href="" class="btn btn-primary m-1">Modifier</a>
-                <a href="" class="btn btn-danger m-1">Supprimer</a>
+                <a [routerLink]="['/edit-scategories/', c._id]" class="btn btn-primary m-1">Modifier</a>
+                <a href="" class="btn btn-danger m-1" (click)="DeleteScategorie(c._id)">Supprimer</a>
             </td>
           </tr>
         </tbody>

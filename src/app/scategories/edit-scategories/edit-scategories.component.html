@@ -1,1 +1,23 @@
-<p>edit-scategories works!</p>
+<div class="container">
+    <h1>Modifier sous Categorie</h1>
+    <form (ngSubmit)="UpdateScategorie()">
+        <div class="mb-3 form-group">
+            <input type="text" readonly class="form-control" name="id" id="id1" [(ngModel)]="scat._id">
+            <label for="exampleFormControlInput1" class="form-label">Nom sous Categorie</label>
+            <input type="text" class="form-control" name="nomscategorie" id="exampleFormControlInput1" [(ngModel)]="scat.nomscategorie">
+          </div>
+          <div class="mb-3 form-group">
+            <input class="form-control" style="display: none;" type="file" id="FormFile" (change)="onFileChanged($event)" #fileInput>
+            <button type="button" class="btn btn-primary" (click)="fileInput.click()">Select File</button>
+            <input type="text" readonly class="form-control" id="imagescategorie" 
+            name="imagescat" [(ngModel)]="scat.imagescat" >
+            <div *ngIf="scat.imagescat!=null"> <img src="../assets/images/{{scat.imagescat}}" width="50" height="50"/></div>
+                
+          </div>
+          <div class="col-auto form-group">
+            <button type="submit" class="btn btn-success mb-3" >Ajouter</button>
+            <a routerLink="/list-categories" class="btn btn-danger mb-3 ms-2">annuler</a>
+          </div>
+    </form>
+    
+</div>
