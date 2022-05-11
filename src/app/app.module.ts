@@ -14,6 +14,7 @@ import { EditScategoriesComponent } from './scategories/edit-scategories/edit-sc
 import { AjoutScategoriesComponent } from './scategories/ajout-scategories/ajout-scategories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
 
   ],
   providers: [],

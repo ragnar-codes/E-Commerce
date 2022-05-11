@@ -8,7 +8,7 @@ export class Article {
     marque: String;
     qteStock: Number;
     caracteristiques: String;
-    imageArtPetitF: String;
+    imageartpetitf: String;
     imageArtGrandF: String[];
     categorieID: String;
     scategorieID: String;

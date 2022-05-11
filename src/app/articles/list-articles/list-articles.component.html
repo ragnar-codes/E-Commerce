@@ -1,37 +1,23 @@
-<div class="container">
-    <h3 class="text-center">Liste Des Articles</h3>
-    <div>
-      <button class="btn btn-success" [routerLink]="'/ajout-articles'">Ajouter</button>
-    </div>
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Reference</th>
-            <th scope="col">designation</th>
-            <th scope="col">Prix Achat</th>
-            <th scope="col">Prix Vente</th>
-            <th scope="col">Prix Solde</th>
-            <th scope="col">Marque</th>
-            <th scope="col">Caracteristiques</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let a of listArticles">
-            <td> {{a.reference}} </td>
-            <td> {{a.designation}} </td>
-            <td> {{a.prixAchat}} </td>
-            <td> {{a.prixVente}} </td>
-            <td> {{a.prixSolde}} </td>
-            <td> {{a.marque}} </td>
-            <td> {{a.caracteristiques}} </td>
-            <td>
-                <a [routerLink]="['/edit-categories/', a._id]" class="btn btn-primary m-1">Modifier</a>
-                <a class="btn btn-danger m-1">Supprimer</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-</div>
-
-<router-outlet></router-outlet>
+<table *ngIf="listArticles" datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Designation</th>
+      <th>Prix</th>
+      <th>Marque</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let art of listArticles">
+      <td> {{art.reference}} </td>
+      <td> {{art.designation}} </td>
+      <td> {{art.prixVente}} </td>
+      <td> {{art.marque}} </td>
+      <td> <img src="../../../assets/{{art.imageartpetitf}}" width="60px" height="60px" alt=""> </td>
+      <td><button class="btn btn-success">Modifier</button></td>
+    </tr>
+    
+  </tbody>
+</table>
