@@ -11,7 +11,10 @@ export class ListCategoriesComponent implements OnInit {
   constructor(private catService:CategorieService) { }
 
   ngOnInit(): void {
-    this.getCategories();
+    this.loadCategories()
+  }
+  loadCategories(){
+    return this.catService.fetchCategories().subscribe(data => this.listCategories = data), (err:any) => console.log(err);
   }
   
   getCategories = () => {

@@ -12,7 +12,10 @@ export class ListArticlesComponent implements OnInit {
   constructor(private articleServ: ArticleService) { }
 
   ngOnInit(): void {
-    this.getArticles()
+    this.loadArticles();
+  }
+  loadArticles(){
+    return this.articleServ.ListArticles().subscribe(data => this.listArticles = data), (err:any) => console.log(err);
   }
   
   getArticles = () => {
