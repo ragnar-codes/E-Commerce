@@ -21,9 +21,4 @@ export class ListArticlesComponent implements OnInit {
     return this.articleServ.ListArticles().subscribe(data => this.listArticles = data), (err:any) => console.log(err);
   }
 
-  getArticles = () => {
-    this.articleServ.ListArticles().subscribe((data: Article[]) => {
-      this.listArticles = data;
-    })
-  }
 }

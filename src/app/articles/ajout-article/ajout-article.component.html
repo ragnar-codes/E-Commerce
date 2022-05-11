@@ -1,1 +1,61 @@
-<p>ajout-article works!</p>
+<div class="container">
+    <h1>Ajout d'un Article</h1>
+    <form (ngSubmit)="insertArticle()">
+        <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Reference</label>
+            <input type="text" class="form-control" name="reference" id="exampleFormControlInput1" [(ngModel)]="art.reference">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Designation</label>
+            <input type="text" class="form-control" name="designation" id="exampleFormControlInput1" [(ngModel)]="art.designation">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Prix Achat</label>
+            <input type="number" class="form-control" name="prixAchat" id="exampleFormControlInput1" [(ngModel)]="art.prixAchat">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Prix Vente</label>
+            <input type="number" class="form-control" name="prixSolde" id="exampleFormControlInput1" [(ngModel)]="art.prixVente">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Prix Solde</label>
+            <input type="number" class="form-control" name="prixSolde" id="exampleFormControlInput1" [(ngModel)]="art.prixSolde">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Marque</label>
+            <input type="text" class="form-control" name="marque" id="exampleFormControlInput1" [(ngModel)]="art.marque">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Quantite Stock</label>
+            <input type="number" class="form-control" name="qteStock" id="exampleFormControlInput1" [(ngModel)]="art.qteStock">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">caracteristiques</label>
+            <textarea class="form-control" name="caracteristiques" id="" cols="100" rows="3"></textarea>
+          </div>
+          <div class="mb-3 form-group">
+            <select class="form-control" name="" id="">
+                <option value="1">Categorie</option>
+            </select>
+          </div>
+          <div class="mb-3 form-group">
+            <select class="form-control" name="" id="">
+                <option value="1">Sous Categorie</option>
+            </select>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Image Petit Format</label>
+            <input class="form-control" style="display: none;" type="file" id="FormFile" (change)="onFileChanged($event)" #fileInput>
+            <button type="button" class="btn btn-primary" (click)="fileInput.click()">Select File</button>
+            <input type="text" readonly class="form-control" id="imagecategorie" 
+            name="imageartpetitf" [(ngModel)]="art.imageartpetitf" >
+            <div *ngIf="art.imageartpetitf!=null"> <img src="../assets/{{art.imageartpetitf}}" width="50" height="50"/></div>
+                
+          </div>
+          <div class="col-auto form-group">
+            <button type="submit" class="btn btn-success mb-3" >Ajouter</button>
+            <a routerLink="/list-categories" class="btn btn-danger mb-3 ms-2">annuler</a>
+          </div>
+    </form>
+    
+</div>
