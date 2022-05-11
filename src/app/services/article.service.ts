@@ -9,10 +9,19 @@ export class ArticleService {
   
   url = "http://localhost:3001/api/articles";
   constructor(private http:HttpClient) { }
+
   ListArticles = ():Observable<Article[]> => {
     return this.http.get<Article[]>(this.url);
   }
 
+  AddArticle(art: Article):Observable<Article> {
+    return this.http.post<Article>(this.url, art);
+  }
+
+  GetArticle(id: object):Observable<Article>{
+    return this.http.get<Article>(this.url + '/' + id);
+  }
+  
   UpdateArticle(id: object, art:Article):Observable<Article>{
     return this.http.put<Article>(this.url + '/' + id, art);
   }
