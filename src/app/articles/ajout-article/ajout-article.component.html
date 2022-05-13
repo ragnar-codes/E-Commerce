@@ -31,11 +31,12 @@
           </div>
           <div class="mb-3 form-group">
             <label for="exampleFormControlInput1" class="form-label">caracteristiques</label>
-            <textarea class="form-control" name="caracteristiques" id="" cols="100" rows="3"></textarea>
+            <textarea class="form-control" name="caracteristiques" id="" cols="100" rows="3" [(ngModel)]="art.caracteristiques"></textarea>
           </div>
           <div class="mb-3 form-group">
+            <label for="exampleFormControlInput" class="form-label">Choisir Categorie</label>
             <select class="form-control" name="" id="">
-                <option value="1">Categorie</option>
+                <option *ngFor="let c of CategorieID" value=" {{c.nomcategorie}} ">{{c.nomcategorie}}</option>
             </select>
           </div>
           <div class="mb-3 form-group">
