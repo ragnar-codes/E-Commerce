@@ -28,7 +28,8 @@ export class AjoutArticleComponent implements OnInit {
   }
 
   insertArticle = () => {
-      this.artServ.AddArticle(this.art).subscribe(data => this.router.navigate(['/list-articles']));
+      this.artServ.AddArticle(this.art).subscribe(data => this.router.navigate(['/list-articles']),
+      err=>console.log(err));
   }
 
   onFileChanged(event:any) {
