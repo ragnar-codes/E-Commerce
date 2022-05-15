@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Categorie } from 'src/app/models/categorie';
 import { CategorieService } from 'src/app/services/categorie.service';
 import { Router } from '@angular/router';
+import { ScategorieService } from 'src/app/services/scategorie.service';
 
 
 @Component({
@@ -11,10 +12,17 @@ import { Router } from '@angular/router';
 })
 export class AjoutCategorieComponent implements OnInit {
   cat:Categorie = new Categorie();
-  constructor(private catServ:CategorieService, private router:Router) { }
+  constructor(private catServ:CategorieService, private scatserv: ScategorieService, private router:Router) { }
 
   ngOnInit(): void {
   }
+  loadScategories () {
+  
+    return this.scatserv.GetScategorieCat(this.categorieid).subscribe(data => {
+            this.scategorieID = data ; }  ),
+                                  (err:any)=>console.log(err) 
+                                 
+                                        }      
   insertCategorie = () => {
       this.catServ.addCategorie(this.cat).subscribe(data => this.router.navigate(['/list-categories']));
   }

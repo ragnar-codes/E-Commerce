@@ -32,10 +32,21 @@ export class AjoutArticleComponent implements OnInit {
       err=>console.log(err));
   }
 
+  changeSuit(e:any) {
+    this.CategorieID=e.target.value;
+    this.loadScategories();
+  }
+  loadScategories () {
+  
+    return this.scatServ.GetScategorieCateg(this.categorieid).subscribe(data => {
+            this.scategorieID = data ; }  ),
+                                  (err:any)=>console.log(err) 
+                                 
+                                        }  
   onFileChanged(event:any) {
-    console.log( event.target.files[0].name) ;
-    this.art.imageartpetitf="assets/"+event.target.files[0].name
+    this.art.imageartpetitf="images/"+event.target.files[0].name;
     }
+
   
 
 }
