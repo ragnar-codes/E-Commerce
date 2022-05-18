@@ -9,7 +9,7 @@ export class Article {
     qteStock: Number;
     caracteristiques: String;
     imageartpetitf: String;
-    imageArtGrandF: String[];
+    imageArtGrandF: String;
     categorieID: object;
     scategorieID: object;
 

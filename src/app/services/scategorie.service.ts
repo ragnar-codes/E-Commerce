@@ -27,7 +27,7 @@ export class ScategorieService {
   deleteScategorie(id: object):Observable<Scategorie>{
     return this.http.delete<Scategorie>(this.url + '/' + id);
   }
-  GetScategorieCat(nomcategorie: object):Observable<Scategorie>{
-    return this.http.get<Scategorie>(this.url + '/' + nomcategorie);
+  GetScategorieCat(categorieID: object):Observable<Scategorie[]>{
+    return this.http.get<Scategorie[]>(this.url + '/cat' + categorieID);
   }
 }

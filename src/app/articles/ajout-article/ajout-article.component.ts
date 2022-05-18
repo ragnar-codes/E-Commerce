@@ -17,6 +17,7 @@ export class AjoutArticleComponent implements OnInit {
   art:Article = new Article();
   CategorieID: Categorie[];
   ScategorieID: Scategorie[];
+  tab: any = [];
   constructor(private artServ:ArticleService, private catServ: CategorieService, private scatServ: ScategorieService, private router:Router) { }
 
   ngOnInit(): void {
@@ -37,14 +38,17 @@ export class AjoutArticleComponent implements OnInit {
     this.loadScategories();
   }
   loadScategories () {
-  
-    return this.scatServ.GetScategorieCateg(this.CategorieID).subscribe(data => {
-            this.scategorieID = data ; }  ),(err:any)=>console.log(err) 
-                                 
-                                        }  
+    return this.scatServ.GetScategorieCat(this.CategorieID).subscribe(data => {
+            this.ScategorieID = data ; }  ),(err:any)=>console.log(err) 
+  }  
   onFileChanged(event:any) {
     this.art.imageartpetitf="images/"+event.target.files[0].name;
+  }
+  onFileChangedGF(event:any) {
+    this.tab.push("images/"+event.target.files[0].name)
+    this.art.imageArtGrandF="images/"+event.target.files[0].name;
     }
+
 
   
 

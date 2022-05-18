@@ -16,13 +16,6 @@ export class AjoutCategorieComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  loadScategories () {
-  
-    return this.scatserv.GetScategorieCat(this.categorieid).subscribe(data => {
-            this.scategorieID = data ; }  ),
-                                  (err:any)=>console.log(err) 
-                                 
-                                        }      
   insertCategorie = () => {
       this.catServ.addCategorie(this.cat).subscribe(data => this.router.navigate(['/list-categories']));
   }
