@@ -38,9 +38,8 @@ export class AjoutArticleComponent implements OnInit {
   }
   loadScategories () {
   
-    return this.scatServ.GetScategorieCateg(this.categorieid).subscribe(data => {
-            this.scategorieID = data ; }  ),
-                                  (err:any)=>console.log(err) 
+    return this.scatServ.GetScategorieCateg(this.CategorieID).subscribe(data => {
+            this.scategorieID = data ; }  ),(err:any)=>console.log(err) 
                                  
                                         }  
   onFileChanged(event:any) {

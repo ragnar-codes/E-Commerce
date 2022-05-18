@@ -10,7 +10,7 @@ export class Article {
     caracteristiques: String;
     imageartpetitf: String;
     imageArtGrandF: String[];
-    categorieID: String;
-    scategorieID: String;
+    categorieID: object;
+    scategorieID: object;
 
 }

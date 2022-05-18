@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Scategorie } from '../models/scategorie';
 import { Observable } from 'rxjs';
+import { Categorie } from '../models/categorie';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,8 @@ export class ScategorieService {
   }
   deleteScategorie(id: object):Observable<Scategorie>{
     return this.http.delete<Scategorie>(this.url + '/' + id);
+  }
+  GetScategorieCat(nomcategorie: object):Observable<Scategorie>{
+    return this.http.get<Scategorie>(this.url + '/' + nomcategorie);
   }
 }
