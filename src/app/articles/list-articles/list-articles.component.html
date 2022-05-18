@@ -7,6 +7,7 @@
       <th>Prix</th>
       <th>Marque</th>
       <th>Image</th>
+      <th>GrandF</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -17,6 +18,11 @@
       <td> {{art.prixVente}} </td>
       <td> {{art.marque}} </td>
       <td> <img src="../../../assets/{{art.imageartpetitf}}" width="60px" height="60px" alt=""> </td>
+      <td> 
+          <tr *ngFor="let im of art.imageGrandF">
+            <img src="../../../assets/{{im}}" width="60px" height="60px" alt="">
+          </tr>
+      </td>
       <td>
         <button routerLink="/edit-articles" class="btn btn-success mb-2">Modifier</button>
         <button class="btn btn-danger">Supprimer</button>
