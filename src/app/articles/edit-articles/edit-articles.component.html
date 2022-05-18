@@ -1,1 +1,104 @@
-<p>edit-articles works!</p>
+<div class="col-sm-8 col-sm-offset-2">
+  <form (ngSubmit)="modifarticle()">
+  <div class="form-group col-sm-4">
+  <label for="reference">reference</label>
+  <input type="text" name="reference" class="formcontrol" [(ngModel)]="article.reference" >
+  </div>
+  <div class="form-group col-sm-4">
+  <label for="designation">designation</label>
+  <input type="text" name="designation" class="formcontrol" [(ngModel)]="article.designation" >
+  </div>
+  <div class="form-group col-sm-4">
+  <label for="prixAchat">prixAchat</label>
+  <input type="number" name="prixAchat" class="formcontrol" [(ngModel)]="article.prixAchat" >
+  </div>
+  <div class="form-group col-sm-4">
+  <label for="prixVente">prixVente</label>
+  <input type="number" name="prixVente" class="formcontrol" [(ngModel)]="article.prixVente" >
+  </div>
+ <div class="form-group col-sm-4">
+  <label for="prixSolde">prixSolde</label>
+  <input type="number" name="prixSolde" class="formcontrol" [(ngModel)]="article.prixSolde" >
+  </div>
+ <div class="form-group col-sm-4">
+  <label for="marque">marque</label>
+  <input type="text" name="marque" class="formcontrol" [(ngModel)]="article.marque" >
+  </div>
+ <div class="form-group col-sm-4">
+  <label for="qtestock">qtestock</label>
+  <input type="number" name="qtestock" class
+ ="form-control" [(ngModel)]="article.qteStock" >
+  </div>
+ <div class="form-group col-sm-4">
+  <label for="caracteristiques">caracteristi
+ ques</label>
+  <input type="text" name="caracteristiques"
+ class="form-control" [(ngModel)]="article.caracteristiques" >
+  </div>
+ <div class="form-group">
+ <div class="col-sm-4">
+ <input style="display: none" type="file"
+ (change)="onFileChanged($event)" #fileInput>
+ <button type="button"
+ (click)="fileInput.click()">Sélectionner image</button>
+ <input type="text" readonly class="form-control"
+ name="imageartpetitf" [(ngModel)]="article.imageartpetitf" >
+ <div *ngIf="article.imageartpetitf!=null"> <img
+ src="../../../../assets/{{article.imageartpetitf}}" width="50"
+ height="50"/></div>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-sm-4">
+ <input style="display: none" type="file"
+ (change)="onFileChangedg($event)" #fileInputg multiple>
+ <button type="button"
+ (click)="fileInputg.click()">Sélectionner image</button>
+ <input type="text" readonly class="formcontrol" name="imageartgrandf" [(ngModel)]="article.imageArtGrandF" >
+ <div
+ *ngIf="article.imageArtGrandF!=null">
+ <div *ngFor="let im of
+ article.imageArtGrandF">
+ <img
+ src="../../../../assets/{{im}}" width="50" height="50"/>
+ </div>
+</div>
+</div>
+</div>
+<table>
+<tr>
+<td>
+<div class="form-group">
+ <label for="categorieID">categ
+ories</label>
+ <select name="categorieID" cla
+ss="form-controlclass" [(ngModel)]="article.categorieID"
+(change)="changeSuit($event)">
+<option *ngFor="let d of categorieID"
+value="{{d._id}}">
+{{d.nomcategorie}}
+</option>
+</select>
+</div>
+</td>
+<td>
+<div class="form-group">
+ <label for="scategorieID">
+sous categories</label>
+ <select name="scategorieID
+" class="form-controlclass" [(ngModel)]="article.scategorieID" >
+<option *ngFor="let sd of
+scategorieID" value="{{sd._id}}">
+{{sd.nomscategorie}}
+</option>
+</select>
+</div>
+</td>
+</tr>
+</table>
+ <div class="form-group col-sm-4">
+ <button type="submit" class="btn btndark"><i class="fa fa-database"></i>Modifier</button>
+
+ </div>
+ </form>
+</div>

@@ -56,6 +56,16 @@
             <div *ngIf="art.imageartpetitf!=null"> <img src="../assets/{{art.imageartpetitf}}" width="50" height="50"/></div>
                 
           </div>
+
+          <div class="mb-3 form-group">
+            <label for="exampleFormControlInput1" class="form-label">Images Grand Format</label>
+            <input class="form-control" style="display: none;" type="file" id="FormFile" (change)="onFileChanged($event)" #fileInput>
+            <button type="button" class="btn btn-primary" (click)="fileInput.click()">Select File</button>
+            <input type="text" readonly class="form-control" id="imagecategorie" 
+            name="imageArtGrandF" [(ngModel)]="art.imageArtGrandF" >
+            <div *ngIf="art.imageartpetitf!=null"> <img src="../assets/{{art.imageartpetitf}}" width="50" height="50"/></div>
+                
+          </div>
           <div class="col-auto form-group">
             <button type="submit" class="btn btn-success mb-3" >Ajouter</button>
             <a routerLink="/list-categories" class="btn btn-danger mb-3 ms-2">annuler</a>
