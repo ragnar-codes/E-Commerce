@@ -62,7 +62,7 @@
             <input class="form-control" style="display: none;" type="file" id="FormFile" (change)="onFileChanged($event)" #fileInput>
             <button type="button" class="btn btn-primary" (click)="fileInput.click()">Select File</button>
             <input type="text" readonly class="form-control" id="imagecategorie" 
-            name="imageArtGrandF" [(ngModel)]="art.imageArtGrandF" >
+            name="imageartgrandf" [(ngModel)]="art.imageartgrandf" >
             <div *ngIf="art.imageartpetitf!=null"> <img src="../assets/{{art.imageartpetitf}}" width="50" height="50"/></div>
                 
           </div>

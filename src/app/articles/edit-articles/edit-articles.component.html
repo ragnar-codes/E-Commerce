@@ -54,11 +54,11 @@
  (change)="onFileChangedg($event)" #fileInputg multiple>
  <button type="button"
  (click)="fileInputg.click()">Sélectionner image</button>
- <input type="text" readonly class="formcontrol" name="imageartgrandf" [(ngModel)]="article.imageArtGrandF" >
+ <input type="text" readonly class="formcontrol" name="imageartgrandf" [(ngModel)]="article.imageartgrandf" >
  <div
- *ngIf="article.imageArtGrandF!=null">
+ *ngIf="article.imageartgrandf!=null">
  <div *ngFor="let im of
- article.imageArtGrandF">
+ article.imageartgrandf">
  <img
  src="../../../../assets/{{im}}" width="50" height="50"/>
  </div>

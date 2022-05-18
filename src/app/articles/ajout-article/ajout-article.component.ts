@@ -46,7 +46,7 @@ export class AjoutArticleComponent implements OnInit {
   }
   onFileChangedGF(event:any) {
     this.tab.push("images/"+event.target.files[0].name)
-    this.art.imageArtGrandF.push("images/"+event.target.files[0].name);
+    this.art.imageartgrandf.push("images/"+event.target.files[0].name);
     }
 
 

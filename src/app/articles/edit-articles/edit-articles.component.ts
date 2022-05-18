@@ -55,6 +55,6 @@ export class EditArticlesComponent implements OnInit {
         this.article.imageartpetitf="images/"+event.target.files[0].name
         }
         onFileChangedg(event:any) {
-        this.article.imageArtGrandF.push("images/"+event.target.files[0].name)}
+        this.article.imageartgrandf.push("images/"+event.target.files[0].name)}
 }
 
