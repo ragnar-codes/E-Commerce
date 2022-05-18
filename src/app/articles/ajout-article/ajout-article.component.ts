@@ -15,8 +15,8 @@ import { ScategorieService } from 'src/app/services/scategorie.service';
 export class AjoutArticleComponent implements OnInit {
 
   art:Article = new Article();
-  CategorieID: Categorie[];
-  ScategorieID: Scategorie[];
+  categorieID: Categorie[];
+  scategorieID: Scategorie[];
   tab: any = [];
   constructor(private artServ:ArticleService, private catServ: CategorieService, private scatServ: ScategorieService, private router:Router) { }
 
@@ -25,7 +25,7 @@ export class AjoutArticleComponent implements OnInit {
   }
 
   loadCategories(){
-    return this.catServ.fetchCategories().subscribe(data => this.CategorieID = data), (err:any) => console.log(err);
+    return this.catServ.fetchCategories().subscribe(data => this.categorieID = data), (err:any) => console.log(err);
   }
 
   insertArticle = () => {
@@ -34,12 +34,12 @@ export class AjoutArticleComponent implements OnInit {
   }
 
   changeSuit(e:any) {
-    this.CategorieID=e.target.value;
+    this.categorieID=e.target.value;
     this.loadScategories();
   }
   loadScategories () {
-    return this.scatServ.GetScategorieCat(this.CategorieID).subscribe(data => {
-            this.ScategorieID = data ; }  ),(err:any)=>console.log(err) 
+    return this.scatServ.GetScategorieCat(this.categorieID).subscribe(data => {
+            this.scategorieID = data ; }  ),(err:any)=>console.log(err) 
   }  
   onFileChanged(event:any) {
     this.art.imageartpetitf="images/"+event.target.files[0].name;

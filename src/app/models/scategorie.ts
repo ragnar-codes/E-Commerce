@@ -4,5 +4,5 @@ export class Scategorie {
     _id: object;
     nomscategorie: string;
     imagescat: string;
-    nomcategorie: Categorie;
+    CategorieID: object;
 }
